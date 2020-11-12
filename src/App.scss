@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$colors:(
+    whiteColor: #FAFAFA,
+    lightGreyColor: #E5E5E5,
+    darkGreyColor:#7E7E7E,
+    blackColor: #424242,
+    accentColor: #1F7CC1
+);
+
+$metric:(
+    mili: 5px,
+    mini: 10px,
+    normal: 20px,
+    mega: 40px,
+    giga: 120px,
+    tera: 180px
+);
+
+body{
+    margin:0;
+    
+    background-color: map-get($colors, whiteColor);
+
+    .RYMCard{
+        display: flex;
+        align-items: center;
+        //height: 250px;
+
+        &--left-img{
+            display: flex;
+            float: left;
+
+            height: 100%;
+            
+            img{
+                width: 255px; //original: 255px
+                height: 255px;
+                margin: auto;
+
+                user-select: none;
+            }
+        }
+        &--right-element{
+            display: block;
+            
+            h1{
+                font-family: montserrat, sans-serif;
+                font-size: 36px; //original: 36px
+
+                margin: 0;
+
+                color: map-get($colors, blackColor);
+
+                &::selection{
+                    background-color: map-get($colors, blackColor);
+                    color: map-get($colors, whiteColor);
+                }
+            }
+            h2{
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 24px; //original: 24px
+
+                margin-top: map-get($metric, normal);
+                margin-bottom: map-get($metric, mega);
+
+                color: map-get($colors, blackColor);
+
+                &::selection{
+                    background-color: map-get($colors, blackColor);
+                    color: map-get($colors, whiteColor);
+                }
+            }
+            &--button{
+                padding: map-get($metric, mini) map-get($metric, normal);
+                border-radius: map-get($metric, mini);
+                width: fit-content;
+                
+                background-color: map-get($colors, accentColor);
+
+                img{
+                    width: 15px;
+
+                    user-select: none;
+                }
+                a{
+                    text-decoration: none;
+                    font-family: montserrat,sans-serif;
+                    font-weight: bold;
+                    font-size: 24px;
+
+                    padding-left: map-get($metric, normal);
+
+                    color: map-get($colors, whiteColor);
+
+                    user-select: none;
+                }
+            }
+        }
+    }
+    .Navbar{
+        display: grid;
+        grid-template-rows: 1fr;
+
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+
+        z-index: 1;
+
+        //overflow: hidden;
+
+        //height: calc(30px + 30px);
+        margin: 0 auto 120px auto;
+        border-radius: map-get($metric, normal);
+
+        background-color: map-get($colors, blackColor);
+
+        &--left-items{
+            display: inline-flex;
+
+            &--logo{
+
+            }
+            &--burguer{
+                width: 32px;
+                margin: auto map-get($metric, normal);
+            }
+            a{
+                padding: map-get($metric, mini) map-get($metric, normal);
+                font-family: montserrat, sans-serif;
+                font-size: 24px; //original: 24px
+                font-weight: bold;
+                text-decoration: none;
+
+                margin: auto;
+
+                color: map-get($colors, whiteColor);
+
+                &::selection{
+                    background-color: map-get($colors, blackColor);
+                    color: map-get($colors, whiteColor);
+                }
+            }
+        }
+        &--right-items{
+            &--form{
+                display: inline-flex;
+                float: right;
+
+                width: calc(100% - 40px);
+                margin: map-get($metric, normal);
+                input{
+                    display: inline-flex;
+
+                    font-family: montserrat, sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+
+                    width: 100%;
+                    padding: map-get($metric, mili) map-get($metric, mini);
+                    border-radius: 0;
+                    border-top-left-radius: map-get($metric, mili);
+                    border-bottom-left-radius: map-get($metric, mili);
+                    -webkit-appearance: none;
+                    border-style: none;
+                    outline-style: none;
+
+                    color: map-get($colors, blackColor);
+
+                    &::-webkit-search-decoration,
+                    &::-webkit-search-cancel-button,
+                    &::-webkit-search-results-button,
+                    &::-webkit-search-results-decoration {
+                        display: none; 
+                    }
+                    &::selection{
+                        background-color: map-get($colors, blackColor);
+                        color: map-get($colors, whiteColor);
+                    }
+                }
+                
+                &--dropdown{
+                    display: inline-flex;
+
+                    height: 18px;
+                    padding: map-get($metric, mili) 0px;
+                    vertical-align: middle;
+
+                    background-color: map-get($colors, whiteColor);
+                    span{
+                        display: inline-flex;
+                        font-family: montserrat, sans-serif;
+                        font-size: 14px; //original: 14px
+                        font-weight: bold;
+
+                        margin: auto 0;
+
+                        color: map-get($colors, blackColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    img{
+                        display: inline-flex;
+                        width: 6px;
+                        
+                        padding: 0px map-get($metric, mili);
+                        vertical-align: middle;
+
+                        user-select: none;
+                    }
+
+                }
+                &--button{
+                    display: contents;
+                    
+                    img{
+                        display: inline-flex;
+                        
+                        padding-left: map-get($metric, mini);
+
+                        vertical-align: middle;
+
+                        user-select: none;
+                    }
+                }
+            }
+            &--log{
+                    
+            }
+        }
+    }
+    .content-wrapper{
+        margin: 0 auto;
+
+        .Review{
+            flex: 3;
+    
+            &--title{
+                font-family: montserrat, sans-serif;
+                font-weight: bold;
+                font-size: 24px;
+    
+                margin-top: 0;
+                margin-bottom: map-get($metric, mega);
+    
+                color: map-get($colors, blackColor);
+    
+                &::selection{
+                    background-color: map-get($colors, blackColor);
+                    color: map-get($colors, whiteColor);
+                }
+            }
+            &--card{
+                position: relative;
+    
+                margin-bottom: map-get($metric, giga);
+    
+                
+                &--image-section{                 
+                    &--image{
+
+                        width: 220px;
+
+                        border-radius: map-get($metric , mini);
+
+                        user-select: none;
+                    }
+                    &--ratings-section{
+                        &--stars{
+
+                        }
+                        &--ratings{
+                            font-family: montserrat, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px; //original: 14px
+
+                            margin: map-get($metric , mili) 0 map-get($metric , mini) 0;
+
+                            color: map-get($colors, blackColor);
+
+                            &::selection{
+                                background-color: map-get($colors, blackColor);
+                                color: map-get($colors, whiteColor);
+                            }
+                        }
+                    }
+
+                }
+                &--infos{
+                    &--name{
+                        font-family: montserrat, sans-serif;
+                        font-weight: bold;
+                        font-size: 36px;// original: 36px
+                        margin: 0 0;
+                        
+                        color: map-get($colors, accentColor);
+                        
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--artist{
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: bold;
+                        font-size: 24px;// original: 36px
+                        margin: 0 0;
+                        
+                        color: map-get($colors, darkGreyColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--genre-title{
+                        font-family: montserrat, sans-serif;
+                        
+                        font-weight: bold;
+                        font-size: 18px;// original: 18px
+                        
+                        margin: map-get($metric, mini) 0px map-get($metric, mili) 0px;
+                        
+                        color: map-get($colors, blackColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--genre{
+                        font-family: roboto, sans-serif;
+                        
+                        font-weight: bold;
+                        font-size: 14px;// original: 18px
+                        margin: 0 0;
+                        
+                        color: map-get($colors, darkGreyColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--subgenre{
+                        font-family: roboto, sans-serif;
+                        
+                        font-weight: 500;
+                        font-size: 14px;// original: 18px
+                        margin: 0 0;
+                        
+                        color: map-get($colors, darkGreyColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                }
+                &--descriptors{
+                    &--title{
+                        font-family: montserrat, sans-serif;
+                        font-weight: bold;
+                        font-size: 18px;// original: 18px
+                        
+                        margin: map-get($metric, mini) 0 0 0;
+                        
+                        color: map-get($colors, blackColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    h5{
+                        display: flex;
+                        float: left;
+
+                        font-family: roboto, sans-serif;
+                        font-weight: 500;
+                        font-size: 14px;// original: 18px
+                        
+                        padding: map-get($metric, mili);
+                        margin: map-get($metric, mili) map-get($metric, mini) map-get($metric, mili) 0;
+                        border-radius: map-get($metric, mini);
+
+                        background-color: map-get($colors, lightGreyColor);
+                        color: map-get($colors, darkGreyColor);
+
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                }
+                &--paragraph-wrapper{
+                    &--paragraph{
+                        font-family: roboto, sans-serif;
+                        font-weight: 500;
+                        font-size: 14px;// original: 18px
+                        line-height: 150%;
+                        
+                        color: map-get($colors, darkGreyColor);
+        
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--expand{
+                        //grid-area: 3 / 1 / 5 / 3;
+    
+                        position: absolute;
+                        bottom: 0;
+        
+                        width: 100%;
+                        height: 12%;
+        
+                        background: linear-gradient(180deg, rgba(250, 250, 250, 0.2) -21.09%, #FAFAFA 50%);
+        
+                        button{
+                            position: absolute;
+                            bottom: -10%;
+                            left: calc(50% - 52px);
+        
+                            font-family: roboto, sans-serif;
+                            font-weight: bold;
+                            font-size: 18px;
+        
+                            border-style: none;
+                            outline-style: none;
+        
+                            user-select: none;
+        
+                            background-color: map-get($colors, whiteColor);
+                            color: map-get($colors, accentColor);
+                        }
+                    }
+                }
+            }
+        }
+        .Aside{
+            flex: 2;
+
+            &--social-cards{
+                &--title{
+                    font-family: montserrat, sans-serif;
+                    font-weight: bold;
+                    font-size: 24px;
+        
+                    margin-top: 0;
+                    margin-bottom: map-get($metric, mega);
+        
+                    color: map-get($colors, blackColor);
+        
+                    &::selection{
+                        background-color: map-get($colors, blackColor);
+                        color: map-get($colors, whiteColor);
+                    }
+                }
+                &--social-wrapper{
+                    margin-bottom: calc(120px - 20px);
+
+                    img{
+                        margin-right: map-get($metric, normal);
+                        margin-bottom: map-get($metric, normal);
+                        border-radius: map-get($metric, mini);
+                    }
+                }
+            }
+            &--side-features{
+                &--menu-wrapper{
+                    display: inline-flex;
+                    h3{
+                        font-family: montserrat, sans-serif;
+                        font-weight: bold;
+                        font-size: 24px;
+            
+                        margin-top: 0;
+                        margin-bottom: map-get($metric, mega);
+            
+                        &::selection{
+                            background-color: map-get($colors, blackColor);
+                            color: map-get($colors, whiteColor);
+                        }
+                    }
+                    &--feature{
+                        margin-right: map-get($metric, normal);
+
+                        color: map-get($colors, blackColor);
+                    }
+                    &--my-feature{
+                        color: map-get($colors, darkGreyColor);
+                    }
+                }
+                &--cards-wrapper{
+                    &--feature-card{
+                        display: flex;
+                        align-items: end;
+
+                        //gap: map-get($metric, normal);
+
+                        margin-bottom: map-get($metric, normal);
+
+                        &--image{
+                            width: 64px;
+                        }
+                        &--side{
+                            margin-left: map-get($metric, normal);
+                            &--name{
+                                font-family: montserrat, sans-serif;
+                                font-weight: bold;
+                                font-size: 14px;
+
+                                margin: 0;
+
+                                color: map-get($colors, blackColor);
+                            }
+                            &--artist{
+                                font-family: montserrat, sans-serif;
+                                font-weight: 500;
+                                font-size: 12px;
+
+                                margin: map-get($metric, mili) 0 map-get($metric, mini) 0;
+
+                                color: map-get($colors, darkGreyColor);
+                            }
+                            &--bottom{
+                                &--year{
+                                    display: inline-flex;
+                                    float: left;
+
+                                    font-family: montserrat, sans-serif;
+                                    font-weight: 500;
+                                    font-size: 12px;
+
+                                    margin: 0 map-get($metric, normal) 0 0;
+
+                                    color: map-get($colors, darkGreyColor);
+                                }
+                                &--star{
+                                        
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1350px){
+    .RYMCard{
+        width: 75%;
+        margin: 0 auto map-get($metric, tera) auto;
+        padding: map-get($metric, tera ) 0 0 0;
+        
+        &--right-element{
+            margin: auto 0 auto map-get($metric, normal);
+        }
+    }
+    .Navbar{
+        width: calc(75% + 40px);
+        grid-template-columns: 1fr 1fr;
+        &--left-items{
+            &--burguer{
+                display: none;
+            }
+        }
+    }
+    .content-wrapper{
+        width: 75%;
+        display: flex;
+    
+        .Review--card{
+            display: grid;
+            grid-template-columns: calc(220px + 40px) 1fr;
+            grid-template-rows: 8fr 7fr 11fr;
+    
+            &--image-section{
+                grid-area: 1 / 1 / 3 / 2;
+            }
+            &--infos{
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            &--descriptors{
+                grid-area: 2 / 2 / 3 / 3;
+            }
+            &--paragraph-wrapper{
+                grid-area: 3 / 1 / 4 / 3;
+            }
+        }
+        .Aside{
+            margin-left: map-get($metric, giga);
+        }
+    }
+}
+@media(max-width: 1349px){
+    .RYMCard{
+        width: 75%;
+
+        margin: 0 auto map-get($metric, tera) auto;
+        padding: map-get($metric, tera ) 0 0 0;
+
+        &--right-element{
+            margin: auto 0 auto map-get($metric, normal);
+        }
+    }
+    .Navbar{
+        width: calc(75% + 40px);
+        grid-template-columns: 1fr 1fr;
+        &--left-items{
+            &--burguer{
+                display: none;
+            }
+        }
+    }
+    .content-wrapper{
+        width: 75%;
+        display: flex;
+        
+        .Review--card{
+            display: grid;
+            grid-template-columns: calc(220px + 40px) 1fr;
+            grid-template-rows: 260px 1fr 2fr;
+    
+            &--image-section{
+                grid-area: 1 / 1 / 3 / 2;
+            }
+            &--infos{
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            &--descriptors{
+                grid-area: 2 / 1 / 3 / 3;
+            }
+            &--paragraph-wrapper{
+                grid-area: 3 / 1 / 4 / 3;
+            }
+        }
+        .Aside{
+            margin-left: map-get($metric, giga);
+        }
+    }
+}
+@media(max-width:1024px){
+    .RYMCard{
+        width: 75%;
+
+        margin: 0 auto map-get($metric, tera) auto;
+        padding: map-get($metric, tera ) 0 0 0;
+
+        &--right-element{
+            margin: auto 0 auto map-get($metric, normal);
+        }
+    }
+    .Navbar{
+        width: calc(75% + 40px);
+        grid-template-columns: 1fr 4fr;
+        &--left-items{
+            &--burguer{
+                display: block;
+                width: 32px;
+            }
+            a{
+                display: none;
+            }
+        }
+    }
+    .content-wrapper{
+        width: 75%;
+        display: block;
+    
+        .Aside{
+            display: flex;
+            justify-content: space-between;
+        
+            margin-left: map-get($metric, giga);
+        }
+    }
+}
+@media(max-width: 730px){
+    .RYMCard{
+        width: 75%;
+        flex-direction: column;
+
+        &--right-element{
+            margin: map-get($metric, mega) 0 auto 0;
+        }
+    }
+    .Navbar{
+        width: calc(75% + 40px);
+    }
+    .content-wrapper{
+        width: 75%;
+        display: block;
+    
+        .Aside{
+            display: block;
+        }
+    }
+}
+@media(max-width: 550px){
+    .RYMCard{
+        width: 90%;
+
+        margin: 0 auto map-get($metric, mega) auto;
+        padding: map-get($metric, mini ) 0 0 0;
+    }
+    .Navbar{
+        width: 100%;
+    }
+    .content-wrapper{
+        width: 90%;
+        
+        .Review--card{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 260px 1fr 1fr 2fr;
+    
+            &--image-section{
+                grid-area: 1 / 1 / 2 / 2;
+            }
+            &--infos{
+                grid-area: 2 / 1 / 3 / 2;
+            }
+            &--descriptors{
+                grid-area: 3 / 1 / 4 / 2;
+            }
+            &--paragraph-wrapper{
+                grid-area: 4 / 1 / 5 / 2;
+            }
+        }
+    }
+}
