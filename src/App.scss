@@ -302,7 +302,7 @@ body{
 
                             margin: map-get($metric , mili) 0 map-get($metric , mini) 0;
 
-                            color: map-get($colors, blackColor);
+                            color: map-get($colors, darkGreyColor);
 
                             &::selection{
                                 background-color: map-get($colors, blackColor);
@@ -610,7 +610,7 @@ body{
         grid-template-columns: 1fr 1fr;
 
         border-radius: map-get($metric, normal);
-        
+
         &--left-items{
             &--burguer{
                 display: none;
@@ -758,7 +758,7 @@ body{
 }
 @media(max-width: 550px){
     .RYMCard{
-        width: 90%;
+        width: 85%;
 
         margin: 0 auto map-get($metric, mega) auto;
         padding: map-get($metric, mini ) 0 0 0;
@@ -769,7 +769,7 @@ body{
         border-radius: 0;
     }
     .content-wrapper{
-        width: 90%;
+        width: 85%;
         
         .Review--card{
             display: grid;

@@ -313,7 +313,7 @@ body .content-wrapper .Review--card--image-section--ratings-section--ratings {
   font-weight: bold;
   font-size: 14px;
   margin: 5px 0 10px 0;
-  color: #424242;
+  color: #7E7E7E;
 }
 
 body .content-wrapper .Review--card--image-section--ratings-section--ratings::-moz-selection {
@@ -855,7 +855,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
 
 @media (max-width: 550px) {
   .RYMCard {
-    width: 90%;
+    width: 85%;
     margin: 0 auto 40px auto;
     padding: 10px 0 0 0;
   }
@@ -864,7 +864,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     border-radius: 0;
   }
   .content-wrapper {
-    width: 90%;
+    width: 85%;
   }
   .content-wrapper .Review--card {
     display: -ms-grid;
