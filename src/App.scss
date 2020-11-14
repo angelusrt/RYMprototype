@@ -16,7 +16,25 @@ $metric:(
     giga: 120px,
     tera: 180px
 );
+*{
+    ::-webkit-scrollbar {
+        width: map-get($metric, mini);
+    }
 
+    ::-webkit-scrollbar-track {
+        background: map-get($colors, whiteColor); 
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: map-get($metric, mili);
+
+        background: map-get($colors, darkGreyColor); 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: map-get($colors, blackColor); 
+    }
+}
 body{
     margin:0;
     
@@ -112,10 +130,9 @@ body{
         //overflow: hidden;
 
         //height: calc(30px + 30px);
-        margin: 0 auto 120px auto;
-        border-radius: map-get($metric, normal);
+        margin: 0 auto map-get($metric, giga) auto;
 
-        background-color: map-get($colors, blackColor);
+        background-color: map-get($colors, blackColor); 
 
         &--left-items{
             display: inline-flex;
@@ -126,6 +143,8 @@ body{
             &--burguer{
                 width: 32px;
                 margin: auto map-get($metric, normal);
+            
+                user-select: none;
             }
             a{
                 padding: map-get($metric, mini) map-get($metric, normal);
@@ -158,7 +177,7 @@ body{
                     font-size: 12px;
                     font-weight: bold;
 
-                    width: 100%;
+                    width: calc( 100% - 90px);
                     padding: map-get($metric, mili) map-get($metric, mini);
                     border-radius: 0;
                     border-top-left-radius: map-get($metric, mili);
@@ -216,7 +235,7 @@ body{
 
                 }
                 &--button{
-                    display: contents;
+                    //display: contents;
                     
                     img{
                         display: inline-flex;
@@ -224,6 +243,8 @@ body{
                         padding-left: map-get($metric, mini);
 
                         vertical-align: middle;
+                        vertical-align: -webkit-baseline-middle;
+                        vertical-align: -moz-middle-with-baseline;
 
                         user-select: none;
                     }
@@ -470,6 +491,8 @@ body{
                         margin-right: map-get($metric, normal);
                         margin-bottom: map-get($metric, normal);
                         border-radius: map-get($metric, mini);
+
+                        user-select: none;
                     }
                 }
             }
@@ -509,6 +532,8 @@ body{
 
                         &--image{
                             width: 64px;
+
+                            user-select: none;
                         }
                         &--side{
                             margin-left: map-get($metric, normal);
@@ -520,6 +545,11 @@ body{
                                 margin: 0;
 
                                 color: map-get($colors, blackColor);
+
+                                &::selection{
+                                    background-color: map-get($colors, blackColor);
+                                    color: map-get($colors, whiteColor);
+                                }
                             }
                             &--artist{
                                 font-family: montserrat, sans-serif;
@@ -529,6 +559,11 @@ body{
                                 margin: map-get($metric, mili) 0 map-get($metric, mini) 0;
 
                                 color: map-get($colors, darkGreyColor);
+
+                                &::selection{
+                                    background-color: map-get($colors, blackColor);
+                                    color: map-get($colors, whiteColor);
+                                }
                             }
                             &--bottom{
                                 &--year{
@@ -542,9 +577,14 @@ body{
                                     margin: 0 map-get($metric, normal) 0 0;
 
                                     color: map-get($colors, darkGreyColor);
+
+                                    &::selection{
+                                        background-color: map-get($colors, blackColor);
+                                        color: map-get($colors, whiteColor);
+                                    }
                                 }
                                 &--star{
-                                        
+                                    user-select: none;
                                 }
                             }
                         }
@@ -558,7 +598,7 @@ body{
 @media(min-width: 1350px){
     .RYMCard{
         width: 75%;
-        margin: 0 auto map-get($metric, tera) auto;
+        margin: 0 auto map-get($metric, giga) auto;
         padding: map-get($metric, tera ) 0 0 0;
         
         &--right-element{
@@ -568,6 +608,9 @@ body{
     .Navbar{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 1fr;
+
+        border-radius: map-get($metric, normal);
+        
         &--left-items{
             &--burguer{
                 display: none;
@@ -605,7 +648,7 @@ body{
     .RYMCard{
         width: 75%;
 
-        margin: 0 auto map-get($metric, tera) auto;
+        margin: 0 auto map-get($metric, giga) auto;
         padding: map-get($metric, tera ) 0 0 0;
 
         &--right-element{
@@ -615,6 +658,9 @@ body{
     .Navbar{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 1fr;
+
+        border-radius: map-get($metric, normal);
+
         &--left-items{
             &--burguer{
                 display: none;
@@ -652,7 +698,7 @@ body{
     .RYMCard{
         width: 75%;
 
-        margin: 0 auto map-get($metric, tera) auto;
+        margin: 0 auto map-get($metric, giga) auto;
         padding: map-get($metric, tera ) 0 0 0;
 
         &--right-element{
@@ -662,6 +708,9 @@ body{
     .Navbar{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 4fr;
+
+        border-radius: map-get($metric, normal);
+
         &--left-items{
             &--burguer{
                 display: block;
@@ -680,7 +729,7 @@ body{
             display: flex;
             justify-content: space-between;
         
-            margin-left: map-get($metric, giga);
+            margin-left: 0;
         }
     }
 }
@@ -702,6 +751,8 @@ body{
     
         .Aside{
             display: block;
+
+            margin-left: 0;
         }
     }
 }
@@ -714,6 +765,8 @@ body{
     }
     .Navbar{
         width: 100%;
+
+        border-radius: 0;
     }
     .content-wrapper{
         width: 90%;
