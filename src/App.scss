@@ -142,7 +142,7 @@ body{
             }
             &--burguer{
                 width: 32px;
-                margin: auto map-get($metric, normal);
+                margin: auto map-get($metric, mini);
             
                 user-select: none;
             }
@@ -169,7 +169,7 @@ body{
                 float: right;
 
                 width: calc(100% - 40px);
-                margin: map-get($metric, normal);
+                margin: map-get($metric, mini) map-get($metric, normal);
                 input{
                     display: inline-flex;
 
@@ -282,7 +282,10 @@ body{
                 margin-bottom: map-get($metric, giga);
     
                 
-                &--image-section{                 
+                &--image-section{   
+                    display: flex;
+                    flex-direction: column;
+
                     &--image{
 
                         width: 220px;
@@ -292,13 +295,20 @@ body{
                         user-select: none;
                     }
                     &--ratings-section{
+                        display: grid;
+                        grid-template-columns: 110px 110px;
+
+
                         &--stars{
+                        
+                            margin: map-get($metric , mili) 0 map-get($metric , mini) 0;
 
                         }
                         &--ratings{
                             font-family: montserrat, sans-serif;
                             font-weight: bold;
                             font-size: 14px; //original: 14px
+                            text-align: right;
 
                             margin: map-get($metric , mili) 0 map-get($metric , mini) 0;
 
@@ -609,7 +619,7 @@ body{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 1fr;
 
-        border-radius: map-get($metric, normal);
+        border-radius: map-get($metric, mini);
 
         &--left-items{
             &--burguer{
@@ -659,7 +669,7 @@ body{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 1fr;
 
-        border-radius: map-get($metric, normal);
+        border-radius: map-get($metric, mini);
 
         &--left-items{
             &--burguer{
@@ -709,7 +719,7 @@ body{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 4fr;
 
-        border-radius: map-get($metric, normal);
+        border-radius: map-get($metric, mini);
 
         &--left-items{
             &--burguer{

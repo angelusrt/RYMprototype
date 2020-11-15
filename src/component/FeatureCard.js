@@ -1,6 +1,17 @@
 import React from 'react';
 
 function FeatureCard(props){
+    //rating
+
+    var imgEl = [];
+
+    for (var i = 0; i < props.rating; i++) {
+        imgEl.push(<img 
+            className="Aside--side-features--cards-wrapper--feature-card--side--bottom--star"
+            alt="" src={props.star}
+        />);
+    }
+
     return(
         <div className="Aside--side-features--cards-wrapper--feature-card">
             <img className="Aside--side-features--cards-wrapper--feature-card--image"
@@ -27,10 +38,7 @@ function FeatureCard(props){
                     >
                         {props.year}
                     </h4>
-                    <img 
-                    className="Aside--side-features--cards-wrapper--feature-card--side--bottom--star"
-                    alt="" src={props.star}
-                    />
+                    { imgEl }
                 </div>
             </div>
         </div>

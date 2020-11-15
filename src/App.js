@@ -27,8 +27,8 @@ import star from './images/star.svg';
 import vb from './images/vb.png';
 import burguer from './images/lista.svg';
 
-import tenAlbumPic from './images/8456207.webp'; 
-import discoAlbumPic from './images/8342068.webp';
+import tenAlbumPic from './images/8456207.png'; 
+import discoAlbumPic from './images/8342068.png';
 
 import React, {useState} from 'react';
 import {CSSTransition} from 'react-transition-group';

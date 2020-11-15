@@ -139,7 +139,7 @@ body .Navbar--left-items {
 
 body .Navbar--left-items--burguer {
   width: 32px;
-  margin: auto 20px;
+  margin: auto 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -172,7 +172,7 @@ body .Navbar--right-items--form {
   display: inline-flex;
   float: right;
   width: calc(100% - 40px);
-  margin: 20px;
+  margin: 10px 20px;
 }
 
 body .Navbar--right-items--form input {
@@ -299,6 +299,16 @@ body .content-wrapper .Review--card {
   margin-bottom: 120px;
 }
 
+body .content-wrapper .Review--card--image-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 body .content-wrapper .Review--card--image-section--image {
   width: 220px;
   border-radius: 10px;
@@ -308,10 +318,22 @@ body .content-wrapper .Review--card--image-section--image {
           user-select: none;
 }
 
+body .content-wrapper .Review--card--image-section--ratings-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 110px 110px;
+      grid-template-columns: 110px 110px;
+}
+
+body .content-wrapper .Review--card--image-section--ratings-section--stars {
+  margin: 5px 0 10px 0;
+}
+
 body .content-wrapper .Review--card--image-section--ratings-section--ratings {
   font-family: montserrat, sans-serif;
   font-weight: bold;
   font-size: 14px;
+  text-align: right;
   margin: 5px 0 10px 0;
   color: #7E7E7E;
 }
@@ -675,7 +697,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     width: calc(75% + 40px);
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    border-radius: 20px;
+    border-radius: 10px;
   }
   .Navbar--left-items--burguer {
     display: none;
@@ -740,7 +762,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     width: calc(75% + 40px);
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    border-radius: 20px;
+    border-radius: 10px;
   }
   .Navbar--left-items--burguer {
     display: none;
@@ -805,7 +827,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     width: calc(75% + 40px);
     -ms-grid-columns: 1fr 4fr;
         grid-template-columns: 1fr 4fr;
-    border-radius: 20px;
+    border-radius: 10px;
   }
   .Navbar--left-items--burguer {
     display: block;
