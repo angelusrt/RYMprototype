@@ -24,15 +24,16 @@ import arrow from './images/arrow.svg';
 import dropdownArrow from './images/dropdownArrow.svg';
 import lupe from './images/lupe.svg';
 import star from './images/star.svg';
-import vb from './images/vb.png';
 import burguer from './images/lista.svg';
 
 import tenAlbumPic from './images/8456207.png'; 
 import discoAlbumPic from './images/8342068.png';
+import vb from './images/vb.png';
+
+import data from './data.json'
 
 import React, {useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
-import FeatureCards from './component/FeatureCard';
 
 function App() {
   /*
@@ -44,6 +45,58 @@ function App() {
 
     (currentScroll >= 600)?setA(true):setA(false)
   }*/
+
+  //console.log(JSON.parse(data))
+  //var data = {};
+  //data = JSON.parse(dataJSON)
+
+
+  var reviewCard = [];
+  var featureCard = [];
+  
+  reviewCard = data.ReviewCard.map( prop => (
+    <ReviewCard>
+      <ImageCard
+        image={tenAlbumPic}
+        starIcon={star}
+        stars={prop.stars}
+        ratings={prop.ratings}
+      />
+      <InfoCard
+        artist={prop.artist}
+        name={prop.songName}
+        year={prop.year}
+        genres={prop.genre}
+        subgenres={prop.subgenre}
+      />
+      <DescriptorCard>
+        {prop.descriptors.map( desc => <h5>{desc}</h5>)}
+      </DescriptorCard>
+      <div className="Review--card--paragraph-wrapper">
+        <p className="Review--card--paragraph-wrapper--paragraph">
+          {prop.review[0]}
+        </p>
+        <p className="Review--card--paragraph-wrapper--paragraph">
+          {prop.review[1]}
+        </p>
+        <div className="Review--card--paragraph-wrapper--expand">
+          <button>Expand Review</button>
+        </div>
+      </div>
+    </ReviewCard>
+  ));
+
+   featureCard = data.FeatureCard.map( prop => (
+      <FeatureCard
+      image={vb}
+      songName={prop.songName}
+      artist={prop.artist}
+      year={prop.date}
+      rating={prop.stars}
+      star={star}
+    />
+   ));
+
   return (
     <div className="App">
       <RYMCard img={sonemic} arrow={arrow}/>
@@ -81,128 +134,15 @@ function App() {
 
       <div className="content-wrapper">
         <Reviews>
-          <ReviewCard>
-            <ImageCard
-              image={tenAlbumPic}
-              starIcon={star}
-              stars="4"
-              ratings="837 ratings"
-            />
-            <InfoCard
-              artist="Tricot"
-              name="10"
-              year="2020"
-              genres="Math rock, indie rock"
-              subgenres="Alternative rock"
-            />
-            <DescriptorCard>
-              <h5>female vocals</h5>
-              <h5>energetic</h5>
-              <h5>uplifting</h5>
-              <h5>playful</h5>
-              <h5>melodic</h5>
-              <h5>mellow</h5>
-              <h5>summer</h5>
-            </DescriptorCard>
-
-            <div className="Review--card--paragraph-wrapper">
-              <p className="Review--card--paragraph-wrapper--paragraph">
-                真っ黒 is now facing its most serious competition as my favourite 
-                album of 2020 from Tricot’s second album of 2020, 10.
-              </p>
-              <p className="Review--card--paragraph-wrapper--paragraph">
-                Guitarist/vocalist Ikumi “Ikkyu” Nakajima, guitarist Motoko “Motifour”
-                Kida, bassist Hiromi “Hirohiro” Sagane, and drummer Yuusuke Yoshida titled
-                their fifth album 10 to commemorate their 10th anniversary. The band’s 
-                impressive chops are used to serve the songs, wound tightly into a sub-forty
-                minute album. Kida’s flexibility as a guitarist, ranging from funky Prince 
-                rhythm playing to menacing Robert Fripp riffs, enables the
-              </p>
-              <div className="Review--card--paragraph-wrapper--expand">
-                <button>Expand Review</button>
-              </div>
-            </div>
-          </ReviewCard>
-          <ReviewCard>
-            <ImageCard
-              image={discoAlbumPic}
-              starIcon={star}
-              stars="4"
-              ratings="998 ratings"
-            />
-            <InfoCard
-              artist="Kylie"
-              name="Disco"
-              year="2020"
-              genres="Dance-Pop, Disco"
-              subgenres="Nu-Disco, Electro-Disco, Synthpop"
-            />
-            <DescriptorCard>
-              <h5>warm</h5>
-              <h5>energetic</h5>
-              <h5>uplifting</h5>
-              <h5>playful</h5>
-              <h5>melodic</h5>
-              <h5>mellow</h5>
-              <h5>romantic</h5>
-            </DescriptorCard>
-            <div className="Review--card--paragraph-wrapper">
-              <p className="Review--card--paragraph-wrapper--paragraph">
-                The 2020 disco-pop revival couldn't really get any better. Ever since the 
-                start of the year we got amazing albums from Jessie Ware, Dua Lipa and Róisín 
-                Murphy as well as a bunch of neat disco accents from The Weeknd and a whole 
-                lot of k-pop artists. And as if that wasn't enough, look who's back, with her 
-                best album in almost 20 years!
-              </p>
-              <p className="Review--card--paragraph-wrapper--paragraph">
-                To say Kylie Minogue is an important figure for disco revival is an 
-                understatement. If it wasn't for her early 2000s work (and maybe Daft Punk's 
-                2013 comeback), I really don't think we'd be experiencing such
-              </p>
-              <div className="Review--card--paragraph-wrapper--expand">
-                <button>Expand Review</button>
-              </div>
-            </div>
-            
-          </ReviewCard>
+          {reviewCard}
         </Reviews>
+
         <Aside>
           <SocialCard/>
-          <SideFeaures>
-            <FeatureCard
-              image={vb}
-              songName="Visions of bodys being burned"
-              artist="Clipping"
-              year="23 October 2020"
-              rating="3"
-              star={star}
-            />
-            <FeatureCard
-              image={vb}
-              songName="Visions of bodys being burned"
-              artist="Clipping"
-              year="23 October 2020"
-              rating="3"
-              star={star}
-            />
-            <FeatureCard
-              image={vb}
-              songName="Visions of bodys being burned"
-              artist="Clipping"
-              year="23 October 2020"
-              rating="3"
-              star={star}
-            />
-            <FeatureCard
-              image={vb}
-              songName="Visions of bodys being burned"
-              artist="Clipping"
-              year="23 October 2020"
-              rating="3"
-              star={star}
-            />
-          </SideFeaures>
           
+          <SideFeaures>
+            {featureCard}
+          </SideFeaures>
         </Aside>
       </div>
     </div>

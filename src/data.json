@@ -1,0 +1,103 @@
+{
+    "ReviewCard": [
+      {
+        "albumImage": "images/8456207.png",
+        "songName" : "10",
+        "year": "2020",
+        "artist": "Tricot",
+        "genre": "Math rock, indie rock",
+        "subgenre": "Alternative rock",
+        "descriptors": [ 
+            "female vocals",
+            "energetic",
+            "uplifting",
+            "playful",
+            "melodic",
+            "mellow",
+            "summer"
+        ],
+        "stars": 4,
+        "ratings" : 837,
+        "review": [
+            "真っ黒 is now facing its most serious competition as my favourite album of 2020 from Tricot’s second album of 2020, 10.",
+            "Guitarist/vocalist Ikumi “Ikkyu” Nakajima, guitarist Motoko “Motifour” Kida, bassist Hiromi “Hirohiro” Sagane, and drummer Yuusuke Yoshida titled their fifth album 10 to commemorate their 10th anniversary. The band’s impressive chops are used to serve the songs, wound tightly into a sub-forty minute album. Kida’s flexibility as a guitarist, ranging from funky Prince rhythm playing to menacing Robert Fripp riffs, enables the"
+        ]
+      },
+      {
+        "albumImage": "images/8342068.png",
+        "songName" : "Disco",
+        "year": "2020",
+        "artist": "Kylie",
+        "genre": "Dance-Pop, Disco",
+        "subgenre": "Nu-Disco, Electro-Disco, Synthpop",
+        "descriptors": [ 
+            "warm",
+            "energetic",
+            "uplifting",
+            "playful",
+            "melodic",
+            "mellow",
+            "romantic"
+        ],
+        "stars": 3,
+        "ratings" : 998,
+        "review": [
+            "The 2020 disco-pop revival couldn't really get any better. Ever since the start of the year we got amazing albums from Jessie Ware, Dua Lipa and Róisín Murphy as well as a bunch of neat disco accents from The Weeknd and a whole lot of k-pop artists. And as if that wasn't enough, look who's back, with her best album in almost 20 years!",
+            "To say Kylie Minogue is an important figure for disco revival is an understatement. If it wasn't for her early 2000s work (and maybe Daft Punk's 2013 comeback), I really don't think we'd be experiencing such"
+        ]
+      },
+      {
+        "albumImage": "images/8342068.png",
+        "songName" : "2000And4Eva",
+        "year": "2020",
+        "artist": "Bree Runway",
+        "genre": "Pop Rap, Contemporary R&B, Electropop",
+        "subgenre": "Trap, UK Hip Hop, Alternative R&B",
+        "descriptors": [ 
+            "eclectic",
+            "rhythmic",
+            "nocturnal",
+            "sexual",
+            "urban",
+            "breakup",
+            "hedonistic"
+        ],
+        "stars": 3,
+        "ratings" : 525,
+        "review": [
+            "Since last year’s EP Be Runway, Bree has firmly held a position as the UK's most promising rapper. This high energy, glitchy and occasionally dreamlike batch of songs had me excited to see how she’d expand on this on her debut mixtape.",
+            "The fuzzy club banger ‘Apeshit’, fitted out with wonky keys and repeatable chorus is Bree Runway’s biggest shot at a killer single. I could see this translating to playing well in a club.It’d have to be a cool club though. ‘Little Nokia’ is less straightforward at points getting into detached, complex FKA Twigs style territory."
+        ]
+      }      
+    ],
+    "FeatureCard": [
+        {
+            "albumImage": "images/vb.png",
+            "songName" : "Visions of bodys being burned",
+            "date": "23 October 2020",
+            "artist": "Clipping",
+            "stars": 4
+        },
+        {
+            "albumImage": "images/vb.png",
+            "songName" : "Song Machine, Season One",
+            "date": "23 October 2020",
+            "artist": "Gorillaz",
+            "stars": 3
+        },
+        {
+            "albumImage": "images/vb.png",
+            "songName" : "Plus",
+            "date": "28 October 2020",
+            "artist": "Autechre",
+            "stars": 3
+        },
+        {
+            "albumImage": "images/vb.png",
+            "songName" : "Lament",
+            "date": "09 October 2020",
+            "artist": "Touché Amoré",
+            "stars": 3
+        }
+    ]
+}
