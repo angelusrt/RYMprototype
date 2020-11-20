@@ -53,15 +53,16 @@ function App() {
 
   var reviewCard = [];
   var featureCard = [];
-  
-  reviewCard = data.ReviewCard.map( prop => (
+  //const image = require('../public/image/8342068.png');
+
+  reviewCard = data.ReviewCard.map( prop => ( 
     <ReviewCard>
       <ImageCard
-        image={tenAlbumPic}
+        image={prop.albumImage}
         starIcon={star}
         stars={prop.stars}
         ratings={prop.ratings}
-      />
+      />  
       <InfoCard
         artist={prop.artist}
         name={prop.songName}

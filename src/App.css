@@ -54,7 +54,7 @@ body .RYMCard--right-element {
 
 body .RYMCard--right-element h1 {
   font-family: montserrat, sans-serif;
-  font-size: 36px;
+  font-size: 33px;
   margin: 0;
   color: #424242;
 }
@@ -72,7 +72,7 @@ body .RYMCard--right-element h1::selection {
 body .RYMCard--right-element h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 25px;
   margin-top: 20px;
   margin-bottom: 40px;
   color: #424242;
@@ -109,7 +109,7 @@ body .RYMCard--right-element--button a {
   text-decoration: none;
   font-family: montserrat,sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 19px;
   padding-left: 20px;
   color: #FAFAFA;
   -webkit-user-select: none;
@@ -149,7 +149,7 @@ body .Navbar--left-items--burguer {
 body .Navbar--left-items a {
   padding: 10px 20px;
   font-family: montserrat, sans-serif;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
   text-decoration: none;
   margin: auto;
@@ -180,7 +180,7 @@ body .Navbar--right-items--form input {
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: montserrat, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   width: calc( 100% - 90px);
   padding: 5px 10px;
@@ -222,7 +222,7 @@ body .Navbar--right-items--form--dropdown span {
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: montserrat, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin: auto 0;
   color: #424242;
@@ -278,7 +278,7 @@ body .content-wrapper .Review {
 body .content-wrapper .Review--title {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 25px;
   margin-top: 0;
   margin-bottom: 40px;
   color: #424242;
@@ -332,7 +332,7 @@ body .content-wrapper .Review--card--image-section--ratings-section--stars {
 body .content-wrapper .Review--card--image-section--ratings-section--ratings {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   text-align: right;
   margin: 5px 0 10px 0;
   color: #7E7E7E;
@@ -351,7 +351,7 @@ body .content-wrapper .Review--card--image-section--ratings-section--ratings::se
 body .content-wrapper .Review--card--infos--name {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 33px;
   margin: 0 0;
   color: #1F7CC1;
 }
@@ -369,7 +369,7 @@ body .content-wrapper .Review--card--infos--name::selection {
 body .content-wrapper .Review--card--infos--artist {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 25px;
   margin: 0 0;
   color: #7E7E7E;
 }
@@ -387,7 +387,7 @@ body .content-wrapper .Review--card--infos--artist::selection {
 body .content-wrapper .Review--card--infos--genre-title {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 19px;
   margin: 10px 0px 5px 0px;
   color: #424242;
 }
@@ -405,7 +405,7 @@ body .content-wrapper .Review--card--infos--genre-title::selection {
 body .content-wrapper .Review--card--infos--genre {
   font-family: roboto, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0 0;
   color: #7E7E7E;
 }
@@ -423,7 +423,7 @@ body .content-wrapper .Review--card--infos--genre::selection {
 body .content-wrapper .Review--card--infos--subgenre {
   font-family: roboto, sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0 0;
   color: #7E7E7E;
 }
@@ -441,7 +441,7 @@ body .content-wrapper .Review--card--infos--subgenre::selection {
 body .content-wrapper .Review--card--descriptors--title {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 19px;
   margin: 10px 0 0 0;
   color: #424242;
 }
@@ -463,7 +463,7 @@ body .content-wrapper .Review--card--descriptors h5 {
   float: left;
   font-family: roboto, sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   padding: 5px;
   margin: 5px 10px 5px 0;
   border-radius: 10px;
@@ -484,7 +484,7 @@ body .content-wrapper .Review--card--descriptors h5::selection {
 body .content-wrapper .Review--card--paragraph-wrapper--paragraph {
   font-family: roboto, sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 150%;
   color: #7E7E7E;
 }
@@ -514,7 +514,7 @@ body .content-wrapper .Review--card--paragraph-wrapper--expand button {
   left: calc(50% - 52px);
   font-family: roboto, sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 19px;
   border-style: none;
   outline-style: none;
   -webkit-user-select: none;
@@ -534,7 +534,7 @@ body .content-wrapper .Aside {
 body .content-wrapper .Aside--social-cards--title {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 25px;
   margin-top: 0;
   margin-bottom: 40px;
   color: #424242;
@@ -573,7 +573,7 @@ body .content-wrapper .Aside--side-features--menu-wrapper {
 body .content-wrapper .Aside--side-features--menu-wrapper h3 {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 25px;
   margin-top: 0;
   margin-bottom: 40px;
 }
@@ -622,7 +622,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side {
 body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--name {
   font-family: montserrat, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0;
   color: #424242;
 }
@@ -640,7 +640,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
 body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--artist {
   font-family: montserrat, sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   margin: 5px 0 10px 0;
   color: #7E7E7E;
 }
@@ -662,7 +662,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
   float: left;
   font-family: montserrat, sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0 20px 0 0;
   color: #7E7E7E;
 }
@@ -713,8 +713,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: calc(220px + 40px) 1fr;
         grid-template-columns: calc(220px + 40px) 1fr;
-    -ms-grid-rows: 8fr 7fr 11fr;
-        grid-template-rows: 8fr 7fr 11fr;
+    -ms-grid-rows: 8fr 7fr 13fr;
+        grid-template-rows: 8fr 7fr 13fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;
@@ -778,8 +778,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: calc(220px + 40px) 1fr;
         grid-template-columns: calc(220px + 40px) 1fr;
-    -ms-grid-rows: 260px 1fr 2fr;
-        grid-template-rows: 260px 1fr 2fr;
+    -ms-grid-rows: 7fr 2fr 8fr;
+        grid-template-rows: 7fr 2fr 8fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;
@@ -869,6 +869,10 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     width: 75%;
     display: block;
   }
+  .content-wrapper .Review--card {
+    -ms-grid-rows: 12fr 5fr 11fr;
+        grid-template-rows: 12fr 5fr 11fr;
+  }
   .content-wrapper .Aside {
     display: block;
     margin-left: 0;
@@ -893,8 +897,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 260px 1fr 1fr 2fr;
-        grid-template-rows: 260px 1fr 1fr 2fr;
+    -ms-grid-rows: 7fr 4fr 3fr 10fr;
+        grid-template-rows: 7fr 4fr 3fr 10fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;

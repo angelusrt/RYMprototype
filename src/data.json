@@ -1,7 +1,7 @@
 {
     "ReviewCard": [
       {
-        "albumImage": "images/8456207.png",
+        "albumImage": "https://e.snmc.io/i/300/w/8e016baf9e82f0f40000f27693dfe181/8456207",
         "songName" : "10",
         "year": "2020",
         "artist": "Tricot",
@@ -13,8 +13,7 @@
             "uplifting",
             "playful",
             "melodic",
-            "mellow",
-            "summer"
+            "mellow"
         ],
         "stars": 4,
         "ratings" : 837,
@@ -24,7 +23,7 @@
         ]
       },
       {
-        "albumImage": "images/8342068.png",
+        "albumImage": "https://e.snmc.io/i/300/w/ffbe3fffd845bf7cf3db40b1d9cc193f/8342068",
         "songName" : "Disco",
         "year": "2020",
         "artist": "Kylie",
@@ -36,8 +35,7 @@
             "uplifting",
             "playful",
             "melodic",
-            "mellow",
-            "romantic"
+            "mellow"
         ],
         "stars": 3,
         "ratings" : 998,
@@ -47,7 +45,7 @@
         ]
       },
       {
-        "albumImage": "images/8342068.png",
+        "albumImage": "https://e.snmc.io/i/300/w/9deaae60b9b8875d4e59f6b4fdc70c3f/8538965",
         "songName" : "2000And4Eva",
         "year": "2020",
         "artist": "Bree Runway",
@@ -59,8 +57,7 @@
             "nocturnal",
             "sexual",
             "urban",
-            "breakup",
-            "hedonistic"
+            "breakup"
         ],
         "stars": 3,
         "ratings" : 525,
@@ -97,6 +94,13 @@
             "songName" : "Lament",
             "date": "09 October 2020",
             "artist": "Touché Amoré",
+            "stars": 3
+        },
+        {
+            "albumImage": "images/vb.png",
+            "songName" : "Anime, Trauma and Divorce",
+            "date": "16 October 2020",
+            "artist": "Open Mike Eagle",
             "stars": 3
         }
     ]
