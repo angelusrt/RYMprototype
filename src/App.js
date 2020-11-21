@@ -26,13 +26,13 @@ import lupe from './images/lupe.svg';
 import star from './images/star.svg';
 import burguer from './images/lista.svg';
 
-import tenAlbumPic from './images/8456207.png'; 
-import discoAlbumPic from './images/8342068.png';
+//import tenAlbumPic from './images/8456207.png'; 
+//import discoAlbumPic from './images/8342068.png';
 import vb from './images/vb.png';
 
 import data from './data.json'
 
-import React, {useState} from 'react';
+import React /*, {useState}*/ from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {

@@ -135,6 +135,9 @@ body .Navbar--left-items {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  /*&--logo{
+
+            }*/
 }
 
 body .Navbar--left-items--burguer {
@@ -164,6 +167,12 @@ body .Navbar--left-items a::-moz-selection {
 body .Navbar--left-items a::selection {
   background-color: #424242;
   color: #FAFAFA;
+}
+
+body .Navbar--right-items {
+  /*&--log{
+                    
+            }*/
 }
 
 body .Navbar--right-items--form {
