@@ -10,10 +10,11 @@ import ReviewCard from './component/ReviewCard';
 import ImageCard from './component/ImageCard';
 import InfoCard from './component/InfoCard';
 import DescriptorCard from './component/DescriptorCard';
+import ReviewText from './component/ReviewText';
 
 import Aside from './component/Aside';
 import SocialCard from './component/SocialCard';
-import SideFeaures from './component/SideFeatures';
+import SideFeatures from './component/SideFeatures';
 import FeatureCard from './component/FeatureCard';
 
 import Logo from './component/Logo';
@@ -32,28 +33,29 @@ import vb from './images/vb.png';
 
 import data from './data.json'
 
-import React /*, {useState}*/ from 'react';
+import React, {useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {
-  /*
+  const[currentScroll,setCurrentScroll] = useState(0);
+  const[a, setA] = useState(false);
+  const[dropActive, setDropActive] = useState(false);
+  const[spanSearch, setSpanSearch] = useState('Artists');
+  const[sideTransition, setSideTransition] = useState('features');
+
   window.addEventListener("scroll", scrollHandler);
 
   function scrollHandler(){
+    
     setCurrentScroll(window.scrollY);
-    console.log(currentScroll + " " + currentScroll + 2);
 
     (currentScroll >= 600)?setA(true):setA(false)
-  }*/
-
-  //console.log(JSON.parse(data))
-  //var data = {};
-  //data = JSON.parse(dataJSON)
-
+  
+    console.log(`${a} ${currentScroll}`);
+  }
 
   var reviewCard = [];
   var featureCard = [];
-  //const image = require('../public/image/8342068.png');
 
   reviewCard = data.ReviewCard.map( prop => ( 
     <ReviewCard>
@@ -73,22 +75,15 @@ function App() {
       <DescriptorCard>
         {prop.descriptors.map( desc => <h5>{desc}</h5>)}
       </DescriptorCard>
-      <div className="Review--card--paragraph-wrapper">
-        <p className="Review--card--paragraph-wrapper--paragraph">
-          {prop.review[0]}
-        </p>
-        <p className="Review--card--paragraph-wrapper--paragraph">
-          {prop.review[1]}
-        </p>
-        <div className="Review--card--paragraph-wrapper--expand">
-          <button>Expand Review</button>
-        </div>
-      </div>
+      <ReviewText
+        review={prop.review}
+        review2={prop.review2}
+      />
     </ReviewCard>
   ));
 
-   featureCard = data.FeatureCard.map( prop => (
-      <FeatureCard
+  featureCard = data.FeatureCard.map( prop => (
+    <FeatureCard
       image={vb}
       songName={prop.songName}
       artist={prop.artist}
@@ -98,13 +93,24 @@ function App() {
     />
    ));
 
+  var dropdowmMenu = <div className="Navbar--right-items--form--select-dropdown--dropdown">
+    <span onClick={() => {setSpanSearch('Artists'); setDropActive(!dropActive); } }>Artists</span>
+    <span onClick={() => {setSpanSearch('Genre'); setDropActive(!dropActive); } }>Genre</span>
+    <span onClick={() => {setSpanSearch('Label'); setDropActive(!dropActive); } }>Label</span>
+    <span onClick={() => {setSpanSearch('Review'); setDropActive(!dropActive); } }>Review</span>
+  </div>;
+
+  function clickHandler(prop){
+    setSideTransition(prop);
+  }
+
   return (
     <div className="App">
       <RYMCard img={sonemic} arrow={arrow}/>
 
       <Navbar>
           <LeftNavItem
-          burguer={burguer}
+            burguer={burguer}
           >
             <a href="/#">New</a>
             <a href="/#">Chart</a>
@@ -114,9 +120,13 @@ function App() {
           <RightNavItem>
             <form className="Navbar--right-items--form">
               <input type="search"/>
-              <div className="Navbar--right-items--form--dropdown">
-                <span>Artists</span>
-                <img alt="" src={dropdownArrow}/>
+              <div className="Navbar--right-items--form--select-dropdown">
+                <div className="Navbar--right-items--form--select-dropdown--button" onClick={ () => setDropActive(!dropActive) }>
+                  <span>{spanSearch}</span>
+                  <img alt="" src={dropdownArrow}/>
+                </div>
+
+                {dropActive && dropdowmMenu}
               </div>
               <div className="Navbar--right-items--form--button">
                 <img alt="" src={lupe}></img>
@@ -141,9 +151,26 @@ function App() {
         <Aside>
           <SocialCard/>
           
-          <SideFeaures>
-            {featureCard}
-          </SideFeaures>
+          <SideFeatures click={ prop => clickHandler(prop)}>
+            <CSSTransition
+              in={sideTransition === 'features'}
+              timeout={300}
+              classNames="feature-transition"
+              unmountOnExit
+            >
+              <div>
+                {featureCard}
+              </div>
+            </CSSTransition>
+            <CSSTransition
+              in={sideTransition === 'my-features'}
+              timeout={300}
+              classNames="my-feature-transition"
+              unmountOnExit
+            >
+              <div></div>
+            </CSSTransition>
+          </SideFeatures>
         </Aside>
       </div>
     </div>

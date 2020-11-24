@@ -208,37 +208,78 @@ body{
                     }
                 }
                 
-                &--dropdown{
-                    display: inline-flex;
-
-                    height: 18px;
-                    padding: map-get($metric, mili) 0px;
-                    vertical-align: middle;
-
-                    background-color: map-get($colors, whiteColor);
-                    span{
+                &--select-dropdown{
+                    &--button{
                         display: inline-flex;
-                        font-family: montserrat, sans-serif;
-                        font-size: map-get($textMetric, mini); //original: 14px
-                        font-weight: bold;
 
-                        margin: auto 0;
-
-                        color: map-get($colors, blackColor);
-
-                        &::selection{
-                            background-color: map-get($colors, blackColor);
-                            color: map-get($colors, whiteColor);
-                        }
-                    }
-                    img{
-                        display: inline-flex;
-                        width: 6px;
-                        
-                        padding: 0px map-get($metric, mili);
+                        height: 18px;
+                        padding: map-get($metric, mili) 0px;
                         vertical-align: middle;
 
-                        user-select: none;
+                        background-color: map-get($colors, whiteColor);
+
+                        cursor: pointer;
+
+                        span{
+                            display: inline-flex;
+                            font-family: montserrat, sans-serif;
+                            font-size: map-get($textMetric, mini); //original: 14px
+                            font-weight: bold;
+
+                            margin: auto 0;
+
+                            color: map-get($colors, blackColor);
+
+                            &::selection{
+                                background-color: map-get($colors, blackColor);
+                                color: map-get($colors, whiteColor);
+                            }
+                        }
+                        img{
+                            display: inline-flex;
+                            width: 6px;
+                            
+                            padding: 0px map-get($metric, mili);
+                            vertical-align: middle;
+
+                            user-select: none;
+                        }
+                    }
+                    &--dropdown{
+                        position: absolute;
+                        //bottom: -30px;
+                        right: 3.0625%;
+
+                        padding: map-get($metric, mini);
+                        border-radius: map-get($metric, mini);
+
+                        color: map-get($colors, whiteColor);
+                        background-color: map-get($colors, blackColor);
+
+                        cursor: pointer;
+
+                        span{
+                            display: block;
+
+                            font-family: montserrat, sans-serif;
+                            font-size: map-get($textMetric, mini); //original: 14px
+                            font-weight: bold;
+
+                            //margin: auto 0;
+                            padding: map-get($metric, mili) map-get($metric, normal);
+                            border-radius: map-get($metric, mili);
+
+                            color: map-get($colors, whiteColor);
+
+                            &::selection{
+                                background-color: map-get($colors, blackColor);
+                                color: map-get($colors, whiteColor);
+                            }
+                            &:hover{
+                                background-color: map-get($colors, accentColor);
+                                color: map-get($colors, whiteColor);
+                            }
+                        }
                     }
 
                 }
@@ -255,6 +296,7 @@ body{
                         vertical-align: -moz-middle-with-baseline;
 
                         user-select: none;
+                        cursor: pointer;
                     }
                 }
             }
@@ -460,12 +502,13 @@ body{
                         width: 100%;
                         height: 12%;
         
-                        background: linear-gradient(180deg, rgba(250, 250, 250, 0.2) -21.09%, #FAFAFA 50%);
+                        background: linear-gradient(180deg, rgba(250, 250, 250, 0) -21.09%, #FAFAFA 50%);
         
                         button{
                             position: absolute;
                             bottom: -10%;
-                            left: calc(50% - 52px);
+                            left: 0;
+                            //left: calc(50% -);
         
                             font-family: roboto, sans-serif;
                             font-weight: bold;
@@ -475,6 +518,7 @@ body{
                             outline-style: none;
         
                             user-select: none;
+                            cursor: pointer;
         
                             background-color: map-get($colors, whiteColor);
                             color: map-get($colors, accentColor);
@@ -534,15 +578,19 @@ body{
                         margin-right: map-get($metric, normal);
 
                         color: map-get($colors, blackColor);
+
+                        cursor: pointer;
                     }
                     &--my-feature{
                         color: map-get($colors, darkGreyColor);
+                    
+                        cursor: pointer;
                     }
                 }
                 &--cards-wrapper{
                     &--feature-card{
                         display: flex;
-                        align-items: end;
+                        align-items: flex-end;
 
                         //gap: map-get($metric, normal);
 
@@ -642,7 +690,7 @@ body{
         .Review--card{
             display: grid;
             grid-template-columns: calc(220px + 40px) 1fr;
-            grid-template-rows: 8fr 7fr 13fr;
+            grid-template-rows: 8fr 7fr;
     
             &--image-section{
                 grid-area: 1 / 1 / 3 / 2;
@@ -692,7 +740,7 @@ body{
         .Review--card{
             display: grid;
             grid-template-columns: calc(220px + 40px) 1fr;
-            grid-template-rows: 7fr 2fr 8fr;
+            grid-template-rows: 7fr 2fr;
     
             &--image-section{
                 grid-area: 1 / 1 / 3 / 2;
@@ -712,7 +760,7 @@ body{
         }
     }
 }
-@media(max-width:1024px){
+@media(max-width:1270px){
     .RYMCard{
         width: 75%;
 
@@ -751,7 +799,7 @@ body{
         }
     }
 }
-@media(max-width: 730px){
+@media(max-width: 780px){
     .RYMCard{
         width: 75%;
         flex-direction: column;
@@ -767,7 +815,7 @@ body{
         width: 75%;
         display: block;
         .Review--card{
-            grid-template-rows: 12fr 5fr 11fr;
+            grid-template-rows: 18fr 5fr;
         }
         .Aside{
             display: block;
@@ -776,7 +824,7 @@ body{
         }
     }
 }
-@media(max-width: 550px){
+@media(max-width: 680px){
     .RYMCard{
         width: 85%;
 
@@ -794,7 +842,7 @@ body{
         .Review--card{
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 7fr 4fr 3fr 10fr;
+            grid-template-rows: 7fr 4fr 3fr;
     
             &--image-section{
                 grid-area: 1 / 1 / 2 / 2;

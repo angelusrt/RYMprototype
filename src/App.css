@@ -216,7 +216,7 @@ body .Navbar--right-items--form input::selection {
   color: #FAFAFA;
 }
 
-body .Navbar--right-items--form--dropdown {
+body .Navbar--right-items--form--select-dropdown--button {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -224,9 +224,10 @@ body .Navbar--right-items--form--dropdown {
   padding: 5px 0px;
   vertical-align: middle;
   background-color: #FAFAFA;
+  cursor: pointer;
 }
 
-body .Navbar--right-items--form--dropdown span {
+body .Navbar--right-items--form--select-dropdown--button span {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -237,17 +238,17 @@ body .Navbar--right-items--form--dropdown span {
   color: #424242;
 }
 
-body .Navbar--right-items--form--dropdown span::-moz-selection {
+body .Navbar--right-items--form--select-dropdown--button span::-moz-selection {
   background-color: #424242;
   color: #FAFAFA;
 }
 
-body .Navbar--right-items--form--dropdown span::selection {
+body .Navbar--right-items--form--select-dropdown--button span::selection {
   background-color: #424242;
   color: #FAFAFA;
 }
 
-body .Navbar--right-items--form--dropdown img {
+body .Navbar--right-items--form--select-dropdown--button img {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -258,6 +259,41 @@ body .Navbar--right-items--form--dropdown img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+body .Navbar--right-items--form--select-dropdown--dropdown {
+  position: absolute;
+  right: 3.0625%;
+  padding: 10px;
+  border-radius: 10px;
+  color: #FAFAFA;
+  background-color: #424242;
+  cursor: pointer;
+}
+
+body .Navbar--right-items--form--select-dropdown--dropdown span {
+  display: block;
+  font-family: montserrat, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #FAFAFA;
+}
+
+body .Navbar--right-items--form--select-dropdown--dropdown span::-moz-selection {
+  background-color: #424242;
+  color: #FAFAFA;
+}
+
+body .Navbar--right-items--form--select-dropdown--dropdown span::selection {
+  background-color: #424242;
+  color: #FAFAFA;
+}
+
+body .Navbar--right-items--form--select-dropdown--dropdown span:hover {
+  background-color: #1F7CC1;
+  color: #FAFAFA;
 }
 
 body .Navbar--right-items--form--button img {
@@ -272,6 +308,7 @@ body .Navbar--right-items--form--button img {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: pointer;
 }
 
 body .content-wrapper {
@@ -513,14 +550,14 @@ body .content-wrapper .Review--card--paragraph-wrapper--expand {
   bottom: 0;
   width: 100%;
   height: 12%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-21.09%, rgba(250, 250, 250, 0.2)), color-stop(50%, #FAFAFA));
-  background: linear-gradient(180deg, rgba(250, 250, 250, 0.2) -21.09%, #FAFAFA 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-21.09%, rgba(250, 250, 250, 0)), color-stop(50%, #FAFAFA));
+  background: linear-gradient(180deg, rgba(250, 250, 250, 0) -21.09%, #FAFAFA 50%);
 }
 
 body .content-wrapper .Review--card--paragraph-wrapper--expand button {
   position: absolute;
   bottom: -10%;
-  left: calc(50% - 52px);
+  left: 0;
   font-family: roboto, sans-serif;
   font-weight: bold;
   font-size: 19px;
@@ -530,6 +567,7 @@ body .content-wrapper .Review--card--paragraph-wrapper--expand button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: pointer;
   background-color: #FAFAFA;
   color: #1F7CC1;
 }
@@ -600,10 +638,12 @@ body .content-wrapper .Aside--side-features--menu-wrapper h3::selection {
 body .content-wrapper .Aside--side-features--menu-wrapper--feature {
   margin-right: 20px;
   color: #424242;
+  cursor: pointer;
 }
 
 body .content-wrapper .Aside--side-features--menu-wrapper--my-feature {
   color: #7E7E7E;
+  cursor: pointer;
 }
 
 body .content-wrapper .Aside--side-features--cards-wrapper--feature-card {
@@ -612,7 +652,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card {
   display: flex;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: end;
+          align-items: flex-end;
   margin-bottom: 20px;
 }
 
@@ -722,8 +762,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: calc(220px + 40px) 1fr;
         grid-template-columns: calc(220px + 40px) 1fr;
-    -ms-grid-rows: 8fr 7fr 13fr;
-        grid-template-rows: 8fr 7fr 13fr;
+    -ms-grid-rows: 8fr 7fr;
+        grid-template-rows: 8fr 7fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;
@@ -787,8 +827,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: calc(220px + 40px) 1fr;
         grid-template-columns: calc(220px + 40px) 1fr;
-    -ms-grid-rows: 7fr 2fr 8fr;
-        grid-template-rows: 7fr 2fr 8fr;
+    -ms-grid-rows: 7fr 2fr;
+        grid-template-rows: 7fr 2fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;
@@ -823,7 +863,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1270px) {
   .RYMCard {
     width: 75%;
     margin: 0 auto 120px auto;
@@ -860,7 +900,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 780px) {
   .RYMCard {
     width: 75%;
     -webkit-box-orient: vertical;
@@ -879,8 +919,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: block;
   }
   .content-wrapper .Review--card {
-    -ms-grid-rows: 12fr 5fr 11fr;
-        grid-template-rows: 12fr 5fr 11fr;
+    -ms-grid-rows: 18fr 5fr;
+        grid-template-rows: 18fr 5fr;
   }
   .content-wrapper .Aside {
     display: block;
@@ -888,7 +928,7 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 680px) {
   .RYMCard {
     width: 85%;
     margin: 0 auto 40px auto;
@@ -906,8 +946,8 @@ body .content-wrapper .Aside--side-features--cards-wrapper--feature-card--side--
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 7fr 4fr 3fr 10fr;
-        grid-template-rows: 7fr 4fr 3fr 10fr;
+    -ms-grid-rows: 7fr 4fr 3fr;
+        grid-template-rows: 7fr 4fr 3fr;
   }
   .content-wrapper .Review--card--image-section {
     -ms-grid-row: 1;
