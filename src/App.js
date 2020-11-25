@@ -1,6 +1,8 @@
 import './App.css';
 import RYMCard from './component/RYMCard';
 
+import LogIn from './component/LogIn';
+
 import Navbar from './component/Navbar';
 import LeftNavItem from './component/LeftNavItem';
 import RightNavItem from './component/RightNavItem';
@@ -39,8 +41,12 @@ import {CSSTransition} from 'react-transition-group';
 function App() {
   const[currentScroll,setCurrentScroll] = useState(0);
   const[a, setA] = useState(false);
+
+  const[popUp, setPopUp] = useState(false);
+
   const[dropActive, setDropActive] = useState(false);
   const[spanSearch, setSpanSearch] = useState('Artists');
+  
   const[sideTransition, setSideTransition] = useState('features');
 
   window.addEventListener("scroll", scrollHandler);
@@ -104,10 +110,15 @@ function App() {
     setSideTransition(prop);
   }
 
+  function loginHandler(prop){
+    setPopUp(prop);
+  }
+
+
   return (
     <div className="App">
-      <RYMCard img={sonemic} arrow={arrow}/>
-
+      <RYMCard img={sonemic} arrow={arrow} login={ (prop) => loginHandler(prop)}/>
+      {popUp && <LogIn login={(prop) => setPopUp(prop)}/>}
       <Navbar>
           <LeftNavItem
             burguer={burguer}

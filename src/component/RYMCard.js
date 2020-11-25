@@ -12,7 +12,7 @@ function RYMCard(props){
                     RYM is one of the largest music databases online, which you 
                     can use to discover hot music. 
                 </h2>
-                <div className="RYMCard--right-element--button">
+                <div className="RYMCard--right-element--button" onClick={ () => props.login(true)}>
                     <img alt="" src={props.arrow}></img>
                     <a href="/#">Log In</a>
                 </div>
