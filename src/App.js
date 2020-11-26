@@ -19,9 +19,6 @@ import SocialCard from './component/SocialCard';
 import SideFeatures from './component/SideFeatures';
 import FeatureCard from './component/FeatureCard';
 
-import Logo from './component/Logo';
-import Log from './component/Log';
-
 import sonemic from './images/sonemic.png';
 import arrow from './images/arrow.svg';
 import dropdownArrow from './images/dropdownArrow.svg';
@@ -41,6 +38,7 @@ import {CSSTransition} from 'react-transition-group';
 function App() {
   const[currentScroll,setCurrentScroll] = useState(0);
   const[a, setA] = useState(false);
+  const[navName, setNavName] = useState("Navbar");
 
   const[popUp, setPopUp] = useState(false);
 
@@ -55,16 +53,20 @@ function App() {
     
     setCurrentScroll(window.scrollY);
 
-    (currentScroll >= 600)?setA(true):setA(false)
+    console.log(`1 ${currentScroll} ${window.scrollY}`);
+
+    (window.scrollY >= 600)?setA(true):setA(false)
   
-    console.log(`${a} ${currentScroll}`);
+    console.log(`${a} ${currentScroll} ${window.scrollY}`);
   }
 
   var reviewCard = [];
   var featureCard = [];
 
   reviewCard = data.ReviewCard.map( prop => ( 
-    <ReviewCard>
+    <ReviewCard
+      key={prop.key}
+    >
       <ImageCard
         image={prop.albumImage}
         starIcon={star}
@@ -90,6 +92,7 @@ function App() {
 
   featureCard = data.FeatureCard.map( prop => (
     <FeatureCard
+      key={prop.key}
       image={vb}
       songName={prop.songName}
       artist={prop.artist}
@@ -114,54 +117,69 @@ function App() {
     setPopUp(prop);
   }
 
-
   return (
     <div className="App">
       <RYMCard img={sonemic} arrow={arrow} login={ (prop) => loginHandler(prop)}/>
+      
       {popUp && <LogIn login={(prop) => setPopUp(prop)}/>}
-      <Navbar>
-          <LeftNavItem
-            burguer={burguer}
-          >
-            <a href="/#">New</a>
-            <a href="/#">Chart</a>
-            <a href="/#">Lists</a>
-            <a href="/#">Community</a>
-          </LeftNavItem>
-          <RightNavItem>
-            <form className="Navbar--right-items--form">
-              <input type="search"/>
-              <div className="Navbar--right-items--form--select-dropdown">
-                <div className="Navbar--right-items--form--select-dropdown--button" onClick={ () => setDropActive(!dropActive) }>
-                  <span>{spanSearch}</span>
-                  <img alt="" src={dropdownArrow}/>
-                </div>
-
-                {dropActive && dropdowmMenu}
-              </div>
-              <div className="Navbar--right-items--form--button">
-                <img alt="" src={lupe}></img>
-              </div>
-            </form>
-          </RightNavItem>
+      
+      <Navbar
+        name={navName}
+      >
+        <LeftNavItem>
           <CSSTransition
-            timeout={300}
-            classNames="stick"
+            in={a === true}
+            timeout={0}
+            classNames="Navbar-active"
+            unmountOnExit
+            onEnter={ () => setNavName("Navbar Navbar-active") }
+            onExit={ () => setNavName("Navbar") }
+          >
+            <img alt="" className="Navbar--left-items--logo" src={sonemic}/>
+          </CSSTransition>
+          <img className="Navbar--left-items--burguer" alt="" src={burguer}/>
+          <a href="/#">New</a>
+          <a href="/#">Chart</a>
+          <a href="/#">Lists</a>
+          <a href="/#">Community</a>
+        </LeftNavItem>
+        <RightNavItem>
+          <form className="Navbar--right-items--form">
+            <input type="search"/>
+            <div className="Navbar--right-items--form--select-dropdown">
+              <div className="Navbar--right-items--form--select-dropdown--button" onClick={ () => setDropActive(!dropActive) }>
+                <span>{spanSearch}</span>
+                <img alt="" src={dropdownArrow}/>
+              </div>
+
+              {dropActive && dropdowmMenu}
+            </div>
+            <div className="Navbar--right-items--form--button">
+              <img alt="" src={lupe}></img>
+            </div>
+          </form>
+          <CSSTransition
+            in={a === true}
+            timeout={0}
+            classNames="Navbar-active"
             unmountOnExit
           >
-            <LeftNavItem logo={Logo}/>
-            <RightNavItem log={Log}/>
+            <button 
+              className="Navbar--right-items--log"
+              onClick={() => setPopUp(true)}
+            >
+              Log In
+            </button>
           </CSSTransition>
+        </RightNavItem>
       </Navbar>
 
       <div className="content-wrapper">
         <Reviews>
           {reviewCard}
         </Reviews>
-
         <Aside>
           <SocialCard/>
-          
           <SideFeatures click={ prop => clickHandler(prop)}>
             <CSSTransition
               in={sideTransition === 'features'}

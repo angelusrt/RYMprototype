@@ -129,10 +129,7 @@ body{
     }
     .Login{
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        top: 0; left: 0; right: 0; bottom: 0;
 
         width: 100%;
         height: 100%;
@@ -175,7 +172,6 @@ body{
                 font-weight: bold;
                 font-size: map-get($textMetric, normal);
     
-                margin-top: map-get($metric, mega);
                 margin-bottom: map-get($metric, mini);
     
                 color: map-get($colors, blackColor);
@@ -184,6 +180,12 @@ body{
                     background-color: map-get($colors, blackColor);
                     color: map-get($colors, whiteColor);
                 }
+            }
+            &--email{
+                margin-top: map-get($metric, mega);
+            }
+            &--password{
+                margin-top: map-get($metric, normal);
             }
             form{
                 width: 100%;
@@ -267,12 +269,18 @@ body{
         &--left-items{
             display: inline-flex;
 
-            /*&--logo{
-
-            }*/
+            &--logo{
+                width: 32px;
+                height: 32px;
+                margin: auto map-get($metric, normal);
+        
+                user-select: none;
+                
+            }
             &--burguer{
                 width: 32px;
-                margin: auto map-get($metric, mini);
+                height: 32px;
+                margin: auto map-get($metric, normal);
             
                 user-select: none;
             }
@@ -296,9 +304,10 @@ body{
         &--right-items{
             &--form{
                 display: inline-flex;
-                float: right;
+                //float: right;
 
-                width: calc(100% - 40px);
+                //width: calc(100% - 40px);
+                width: calc( 85% - 90px);
                 margin: map-get($metric, mini) map-get($metric, normal);
                 input{
                     display: inline-flex;
@@ -307,7 +316,7 @@ body{
                     font-size: map-get($textMetric, mili);
                     font-weight: bold;
 
-                    width: calc( 100% - 90px);
+                    width: 100%;
                     padding: map-get($metric, mili) map-get($metric, mini);
                     border-radius: 0;
                     border-top-left-radius: map-get($metric, mili);
@@ -422,9 +431,25 @@ body{
                     }
                 }
             }
-            /*&--log{
-                    
-            }*/
+            &--log{
+                text-decoration: none;
+                font-family: montserrat,sans-serif;
+                font-weight: bold;
+                font-size: map-get($textMetric, mini);
+
+                display: inline-block;
+                padding: map-get($metric, mili) map-get($metric, normal);
+                border-radius: map-get($metric, mili);
+                border-style: none;
+                width: fit-content;
+                
+                cursor: pointer;
+                user-select: none;
+                outline: none;
+
+                background-color: map-get($colors, accentColor);
+                color: map-get($colors, whiteColor);
+            }
         }
     }
     .content-wrapper{
@@ -810,6 +835,10 @@ body{
                 display: none;
             }
         }
+
+        &-active{    
+            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+        }
     }
     .content-wrapper{
         width: 75%;
@@ -865,6 +894,10 @@ body{
             &--burguer{
                 display: none;
             }
+        }
+
+        &-active{    
+            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
         }
     }
     .content-wrapper{
@@ -926,6 +959,9 @@ body{
                 display: none;
             }
         }
+        &-active{    
+            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+        }
     }
     .content-wrapper{
         width: 75%;
@@ -956,6 +992,11 @@ body{
     }
     .Navbar{
         width: calc(75% + 40px);
+        grid-template-columns: 1fr 6fr;
+
+        &-active{    
+            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+        }
     }
     .content-wrapper{
         width: 75%;
@@ -981,6 +1022,10 @@ body{
         width: 100%;
 
         border-radius: 0;
+
+        &--left-items--logo{
+            display: none;
+        }
     }
     .content-wrapper{
         width: 85%;

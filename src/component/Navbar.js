@@ -1,16 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Navbar(props){
-    const[scrollY, setScrollY] = useState(0);
-
-    function onScroll(){
-        const currentScroll = window.scrollY;
-        setScrollY(currentScroll);
-        console.log(scrollY);
-    }
-    
     return(
-        <nav className="Navbar" onScroll={onScroll}>
+        <nav className={props.name} >
             {props.children}
         </nav>
     );

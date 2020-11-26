@@ -13,7 +13,7 @@ function FeatureCard(props){
     }
 
     return(
-        <div key="transition-group-content" className="Aside--side-features--cards-wrapper--feature-card">
+        <div className="Aside--side-features--cards-wrapper--feature-card">
             <img className="Aside--side-features--cards-wrapper--feature-card--image"
             alt="" src={props.image}/>
             <div 
