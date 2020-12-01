@@ -32,7 +32,7 @@ import vb from './images/vb.png';
 
 import data from './data.json'
 
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState/*, useRef, useEffect*/} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {
