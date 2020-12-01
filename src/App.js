@@ -32,7 +32,7 @@ import vb from './images/vb.png';
 
 import data from './data.json'
 
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {
@@ -130,10 +130,12 @@ function App() {
           <CSSTransition
             in={a === true}
             timeout={0}
-            classNames="Navbar-active"
+            classNames="Navbar-a"
             unmountOnExit
-            onEnter={ () => setNavName("Navbar Navbar-active") }
-            onExit={ () => setNavName("Navbar") }
+            onEntered = { () => setNavName("Navbar Navbar-active") }
+            onEntering = { () => setNavName("Navbar Navbar-active-entering") }
+            onExited = { () => setNavName("Navbar") }
+            onExiting = { () => setNavName("Navbar Navbar-active-exiting") }
           >
             <img alt="" className="Navbar--left-items--logo" src={sonemic}/>
           </CSSTransition>

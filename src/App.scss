@@ -451,6 +451,7 @@ body{
                 color: map-get($colors, whiteColor);
             }
         }
+        
     }
     .content-wrapper{
         margin: 0 auto map-get($metric , giga) auto;
@@ -830,6 +831,7 @@ body{
 
         border-radius: map-get($metric, mini);
 
+        transition: width .5s ease;
         &--left-items{
             &--burguer{
                 display: none;
@@ -837,8 +839,10 @@ body{
         }
 
         &-active{    
-            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+            width: 100%;
+            transition: width .5s ease;
         }
+
     }
     .content-wrapper{
         width: 75%;
@@ -890,6 +894,8 @@ body{
 
         border-radius: map-get($metric, mini);
 
+        transition: width .5s ease;
+
         &--left-items{
             &--burguer{
                 display: none;
@@ -897,7 +903,8 @@ body{
         }
 
         &-active{    
-            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+            width: 100%;
+            transition: width .5s ease;
         }
     }
     .content-wrapper{
@@ -950,6 +957,8 @@ body{
 
         border-radius: map-get($metric, mini);
 
+        transition: width .5s ease;
+
         &--left-items{
             &--burguer{
                 display: block;
@@ -960,7 +969,8 @@ body{
             }
         }
         &-active{    
-            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+            width: 100%;
+            transition: width .5s ease;
         }
     }
     .content-wrapper{
@@ -994,8 +1004,11 @@ body{
         width: calc(75% + 40px);
         grid-template-columns: 1fr 6fr;
 
+        transition: width .5s ease;
+
         &-active{    
-            width: calc(75% + 40px + 40px + 32px + 40px + 30px);
+            width: 100%;
+            transition: width .5s ease;
         }
     }
     .content-wrapper{
