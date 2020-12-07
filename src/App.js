@@ -36,9 +36,15 @@ import React, {useState/*, useRef, useEffect*/} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {
+
+  var isFirefox = typeof InstallTrigger !== 'undefined';
+  
+
   const[currentScroll,setCurrentScroll] = useState(0);
   const[a, setA] = useState(false);
   const[navName, setNavName] = useState("Navbar");
+
+  const[burguerDrop, setBurguerDrop] = useState(false);
 
   const[popUp, setPopUp] = useState(false);
 
@@ -102,11 +108,19 @@ function App() {
     />
    ));
 
-  var dropdowmMenu = <div className="Navbar--right-items--form--select-dropdown--dropdown">
+  const dropdowmMenu = <div className="Navbar--right-items--form--select-dropdown--dropdown">
     <span onClick={() => {setSpanSearch('Artists'); setDropActive(!dropActive); } }>Artists</span>
     <span onClick={() => {setSpanSearch('Genre'); setDropActive(!dropActive); } }>Genre</span>
     <span onClick={() => {setSpanSearch('Label'); setDropActive(!dropActive); } }>Label</span>
     <span onClick={() => {setSpanSearch('Review'); setDropActive(!dropActive); } }>Review</span>
+  </div>;
+
+  const burguerDropdown = <div className="Navbar--left-items--burguer-dropdown">
+    <a onClick={() => setBurguerDrop(!burguerDrop)} className="Navbar--left-items--burguer-dropdown--items" href="/#">Home</a>
+    <a onClick={() => setBurguerDrop(!burguerDrop)} className="Navbar--left-items--burguer-dropdown--items" href="/#">New</a>
+    <a onClick={() => setBurguerDrop(!burguerDrop)} className="Navbar--left-items--burguer-dropdown--items" href="/#">Chart</a>
+    <a onClick={() => setBurguerDrop(!burguerDrop)} className="Navbar--left-items--burguer-dropdown--items" href="/#">Lists</a>
+    <a onClick={() => setBurguerDrop(!burguerDrop)} className="Navbar--left-items--burguer-dropdown--items" href="/#">Community</a>
   </div>;
 
   function clickHandler(prop){
@@ -137,19 +151,20 @@ function App() {
             onExited = { () => setNavName("Navbar") }
             onExiting = { () => setNavName("Navbar Navbar-active-exiting") }
           >
-            <img alt="" className="Navbar--left-items--logo" src={sonemic}/>
+            <a className="Navbar--left-items--logo-link"href="/#"><img alt="" className="Navbar--left-items--logo-link--logo" src={sonemic}/></a>
           </CSSTransition>
-          <img className="Navbar--left-items--burguer" alt="" src={burguer}/>
-          <a href="/#">New</a>
-          <a href="/#">Chart</a>
-          <a href="/#">Lists</a>
-          <a href="/#">Community</a>
+          <img onClick={()=> {setBurguerDrop(!burguerDrop); setDropActive(false)}} className="Navbar--left-items--burguer" alt="" src={burguer}/>
+          {burguerDrop && burguerDropdown}
+          <a className="Navbar--left-items--links" href="/#">New</a>
+          <a className="Navbar--left-items--links" href="/#">Chart</a>
+          <a className="Navbar--left-items--links" href="/#">Lists</a>
+          <a className="Navbar--left-items--links" href="/#">Community</a>
         </LeftNavItem>
         <RightNavItem>
           <form className="Navbar--right-items--form">
             <input type="search"/>
             <div className="Navbar--right-items--form--select-dropdown">
-              <div className="Navbar--right-items--form--select-dropdown--button" onClick={ () => setDropActive(!dropActive) }>
+              <div className="Navbar--right-items--form--select-dropdown--button" onClick={ () => {setDropActive(!dropActive); setBurguerDrop(false)}}>
                 <span>{spanSearch}</span>
                 <img alt="" src={dropdownArrow}/>
               </div>

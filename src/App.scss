@@ -269,13 +269,18 @@ body{
         &--left-items{
             display: inline-flex;
 
-            &--logo{
+            &--logo-link{   
                 width: 32px;
                 height: 32px;
+
                 margin: auto map-get($metric, normal);
-        
-                user-select: none;
-                
+
+                &--logo{
+                    width: 100%;
+                    height: 100%;
+
+                    user-select: none;
+                }
             }
             &--burguer{
                 width: 32px;
@@ -284,7 +289,48 @@ body{
             
                 user-select: none;
             }
-            a{
+            &--burguer-dropdown{
+                position: absolute;
+                bottom: -155px;
+                z-index: -1;
+
+                width: calc(100% - 20px);
+
+                padding: map-get($metric, mini);
+                border-radius: 0;
+                border-bottom-left-radius: map-get($metric, mini);
+                border-bottom-right-radius: map-get($metric, mini);
+
+                color: map-get($colors, whiteColor);
+                background-color: map-get($colors, blackColor);
+
+                cursor: pointer;
+                &--items{
+                    display: block;
+
+                    font-family: montserrat, sans-serif;
+                    font-size: map-get($textMetric, mini); //original: 14px
+                    font-weight: bold;
+
+                    text-decoration: none;
+
+                    //margin: auto 0;
+                    padding: map-get($metric, mili) map-get($metric, normal);
+                    border-radius: map-get($metric, mili);
+
+                    color: map-get($colors, whiteColor);
+
+                    &::selection{
+                        background-color: map-get($colors, blackColor);
+                        color: map-get($colors, whiteColor);
+                    }
+                    &:hover{
+                        background-color: map-get($colors, accentColor);
+                        color: map-get($colors, whiteColor);
+                    }
+                }
+            }
+            &--links{
                 padding: map-get($metric, mini) map-get($metric, normal);
                 font-family: montserrat, sans-serif;
                 font-size: map-get($textMetric, mega); //original: 24px
@@ -307,7 +353,6 @@ body{
                 //float: right;
 
                 //width: calc(100% - 40px);
-                width: calc( 85% - 90px);
                 margin: map-get($metric, mini) map-get($metric, normal);
                 input{
                     display: inline-flex;
@@ -340,6 +385,8 @@ body{
                 }
                 
                 &--select-dropdown{
+                    position: relative;
+                    
                     &--button{
                         display: inline-flex;
 
@@ -379,7 +426,7 @@ body{
                     &--dropdown{
                         position: absolute;
                         //bottom: -30px;
-                        right: 3.0625%;
+                        right: 0;
 
                         padding: map-get($metric, mini);
                         border-radius: map-get($metric, mini);
@@ -418,8 +465,8 @@ body{
                     //display: contents;
                     
                     img{
-                        display: inline-flex;
-                        
+                        display: inline-block;
+
                         padding-left: map-get($metric, mini);
 
                         vertical-align: middle;
@@ -437,8 +484,9 @@ body{
                 font-weight: bold;
                 font-size: map-get($textMetric, mini);
 
-                display: inline-block;
+                //display: inline-block;
                 padding: map-get($metric, mili) map-get($metric, normal);
+                margin: auto map-get($metric , normal);
                 border-radius: map-get($metric, mili);
                 border-style: none;
                 width: fit-content;
@@ -725,7 +773,7 @@ body{
                     &--feature{
                         margin-right: map-get($metric, normal);
 
-                        color: map-get($colors, blackColor);
+                        color: map-get($colors, darkGreyColor);
 
                         cursor: pointer;
                     }
@@ -734,6 +782,10 @@ body{
                     
                         cursor: pointer;
                     }
+                    .side-feature-active{
+                        color: map-get($colors, blackColor);
+                    }
+                    
                 }
                 &--cards-wrapper{
                     &--feature-card{
@@ -836,11 +888,28 @@ body{
             &--burguer{
                 display: none;
             }
+            &--burguer-dropdown{
+                display: none;
+            }
+        }
+        &--right-items{
+            text-align: end;
+            &--form{
+                width: calc( 85% - 90px);
+            }
+            &--log{   
+                img{
+                    display: inline-flex;
+                }
+            }
         }
 
         &-active{    
             width: 100%;
-            transition: width .5s ease;
+
+            border-radius: 0;
+
+            transition: all .5s ease;
         }
 
     }
@@ -900,11 +969,28 @@ body{
             &--burguer{
                 display: none;
             }
+            &--burguer-dropdown{
+                display: none;
+            }
+        }
+        &--right-items{
+            text-align: end;
+            &--form{
+                width: calc( 85% - 90px);
+            }
+            &--log{   
+                img{
+                    display: inline-flex;
+                }
+            }
         }
 
         &-active{    
             width: 100%;
-            transition: width .5s ease;
+
+            border-radius: 0;
+
+            transition: all .5s ease;
         }
     }
     .content-wrapper{
@@ -953,7 +1039,7 @@ body{
     }
     .Navbar{
         width: calc(75% + 40px);
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 9fr;
 
         border-radius: map-get($metric, mini);
 
@@ -964,13 +1050,32 @@ body{
                 display: block;
                 width: 32px;
             }
-            a{
+            &--burguer-dropdown{
+                display: block;
+            }
+            &--links{
                 display: none;
+            }
+            &--logo-link{
+                display: none;
+            }
+        }
+        &--right-items{
+            &--form{
+                width: calc( 85% - 90px);
+            }
+            &--log{   
+                img{
+                    display: inline-flex;
+                }
             }
         }
         &-active{    
             width: 100%;
-            transition: width .5s ease;
+
+            border-radius: 0;
+
+            transition: all .5s ease;
         }
     }
     .content-wrapper{
@@ -1002,13 +1107,16 @@ body{
     }
     .Navbar{
         width: calc(75% + 40px);
-        grid-template-columns: 1fr 6fr;
+        grid-template-columns: 1fr 9fr;
 
         transition: width .5s ease;
 
         &-active{    
             width: 100%;
-            transition: width .5s ease;
+
+            border-radius: 0;
+
+            transition: all .5s ease;
         }
     }
     .content-wrapper{
@@ -1038,6 +1146,21 @@ body{
 
         &--left-items--logo{
             display: none;
+        }
+        &--right-items{
+            @media(min--moz-device-pixel-ratio:0) {
+                text-align: -moz-left;
+            }
+            &--form{
+                width: calc( 100% - 30px);
+                
+                @media(min--moz-device-pixel-ratio:0) {
+                    width: calc( 100% - 130px);
+                }
+            }
+            &--log{   
+                display: none;
+            }
         }
     }
     .content-wrapper{
