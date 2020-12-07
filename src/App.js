@@ -36,10 +36,6 @@ import React, {useState/*, useRef, useEffect*/} from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 function App() {
-
-  var isFirefox = typeof InstallTrigger !== 'undefined';
-  
-
   const[currentScroll,setCurrentScroll] = useState(0);
   const[a, setA] = useState(false);
   const[navName, setNavName] = useState("Navbar");
